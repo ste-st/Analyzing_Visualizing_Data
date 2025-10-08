@@ -1,6 +1,5 @@
-# 📊 Data Analysis & Visualization Assignment
-# Author: Your Name
-# Date: YYYY-MM-DD
+#  Data Analysis & Visualization Assignment
+
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,19 +16,19 @@ try:
     df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
     df['species'] = pd.Categorical.from_codes(iris.target, iris.target_names)
 
-    print("✅ Dataset loaded successfully!")
+    print(" Dataset loaded successfully!")
 except Exception as e:
-    print(f"❌ Error loading dataset: {e}")
+    print(f" Error loading dataset: {e}")
 
 # Display the first few rows
-print("\n📌 First 5 rows of the dataset:")
+print("\n First 5 rows of the dataset:")
 print(df.head())
 
 # Check data types and missing values
-print("\n🧠 Dataset Info:")
+print("\n Dataset Info:")
 print(df.info())
 
-print("\n🔍 Missing Values:")
+print("\n Missing Values:")
 print(df.isnull().sum())
 
 # In this dataset there are no missing values, but if there were:
@@ -40,16 +39,16 @@ print(df.isnull().sum())
 # ------------------------------------------------------------
 
 # Basic statistics
-print("\n📊 Basic Statistics:")
+print("\n Basic Statistics:")
 print(df.describe())
 
 # Grouping: mean of numerical columns by species
 grouped = df.groupby('species').mean(numeric_only=True)
-print("\n📈 Mean values by species:")
+print("\n Mean values by species:")
 print(grouped)
 
 # Identify some patterns manually
-print("\n📝 Observations:")
+print("\n Observations:")
 print("- Setosa generally has smaller petal and sepal sizes.")
 print("- Virginica tends to have the largest petal length and width on average.")
 print("- Versicolor falls in between the two.")
